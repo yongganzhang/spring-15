@@ -6,7 +6,14 @@
 		<artifactId>spring-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-demo-01</artifactId>
+	<artifactId>spring-ioc-01</artifactId>
 
-	
+	<dependencies>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+	</dependencies>
+
 </project>

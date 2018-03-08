@@ -1,0 +1,62 @@
+Spring IOC
+
+第一种：
+	1、	构造器的方式实例化bean对象
+	
+	直接在 spring-context.xml 配置bean即可
+			<bean id="userService" class="com.shsxt.demo.UserService"></bean>
+	注意：
+		待出初始化bean必须有空参构造器
+		
+第二种：
+	2、	静态工厂方法方式实例化bean
+	 首先： 创建  一个静态工厂类
+	 		并且定义一个 静态方法  （提供bean对象的创建）
+	 		
+	 		public class StaticFactory {
+				public static UserSerivce createUserSerivce () {
+					return new UserSerivce();
+				}
+			
+			}
+				 		
+	 注意： 这里创建对象的方法 必须是静态方法
+	 
+	 最后配置是spring-context.xml
+	 	<!-- 2.静态工厂 创建 bean -->
+	<bean id="userService" class="com.shsxt.factory.StaticFactory" factory-method="createUserSerivce"></bean>
+	 
+	 特别注意： 
+	 	class： 静态工厂的完全限定名称
+	 	factory-method:  静态工厂中静态方法
+	 	
+
+第三种：
+	3、实例化工厂方式创建
+	首先创建一个工厂bean 并定义一个成员方法（创建bean）
+	public class InstanceFactory {
+	
+		public UserSerivce2 createUserSerivce2 () {
+			return new UserSerivce2();
+		}
+	}
+	
+	
+	在spring-context.xml 配置文件中
+		首先初始化工厂bean
+				<!-- 初始化工厂 -->
+		<bean id="instanceFactory" class="com.shsxt.factory.InstanceFactory"></bean>
+		通过工厂bean初始化化 Bean
+		<bean id="userSerivce2" factory-bean="instanceFactory" factory-method="createUserSerivce2"></bean>
+		
+		factory-bean: 工厂bean的id
+	
+			 	
+	 	
+	 		
+	 	
+	
+	
+		
+	
+	
