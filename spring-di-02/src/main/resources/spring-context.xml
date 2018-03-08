@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="userService" class="com.shsxt.service.UserService">
+		<!-- <constructor-arg index="0" ref="goodsSerive"></constructor-arg> -->
+		<property name="goodsService" ref="goodsSerive"></property>
+	</bean>
+
+
+	<bean id="goodsSerive" class="com.shsxt.service.GoodsService">
+		<!-- <constructor-arg index="0" ref="userService"></constructor-arg> -->
+		<property name="userSerivce" ref="userService"></property>
+	</bean>
+
+
+
+	<bean id="foodsService" class="com.shsxt.demo.FoodsService">
+
+		<property name="list">
+			<list>
+				<value>河南烩面</value>
+				<value>南方臊子面</value>
+				<value>油泼面</value>
+				<value>方便面</value>
+			</list>
+		</property>
+
+		<property name="set">
+			<set>
+				<value>快乐小馒头</value>
+				<value>北方馒头</value>
+				<value>天津麻花</value>
+				<value>新疆大饼</value>
+			</set>
+		</property>
+
+		<property name="map">
+			<map>
+				<entry>
+					<key>
+						<value>河南</value>
+					</key>
+					<value>云台山风景</value>
+				</entry>
+				<entry>
+					<key>
+						<value>上海</value>
+					</key>
+					<value>宝塔</value>
+				</entry>
+
+				<entry>
+					<key>
+						<value>北京</value>
+					</key>
+					<value>紫禁城</value>
+				</entry>
+			</map>
+		</property>
+
+
+	</bean>
+
+</beans>
