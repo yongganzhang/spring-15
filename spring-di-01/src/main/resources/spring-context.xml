@@ -22,4 +22,22 @@
 	</bean>
 
 
+	<!-- 静态工厂注入 -->
+	<bean id="userDao01" class="com.shsxt.service.StaticFactory"
+		factory-method="createUserDao"></bean>
+	<bean id="userService3" class="com.shsxt.service.UserService3">
+		<property name="userDao" ref="userDao01"></property>
+	</bean>
+
+
+	<!-- 实例化工厂注入 -->
+	<bean id="instanceFactory" class="com.shsxt.service.InstanceFactory">
+	</bean>
+	<bean id="userDao03" factory-bean="instanceFactory"
+		factory-method="createUserDao"></bean>
+	<bean id="UserService4" class="com.shsxt.service.UserService4">
+		<property name="userDao" ref="userDao03"></property>
+	</bean>
+
+
 </beans>
