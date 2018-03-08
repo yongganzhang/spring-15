@@ -1,18 +1,24 @@
 /.settings/
 .project
 
-/spring-demo-01/.settings/
-/spring-demo-01/.project
-/spring-demo-01/.classpath
-/spring-demo-01/target/
+spring-demo-01/.settings/
+spring-demo-01/.project
+spring-demo-01/.classpath
+spring-demo-01/target/
 
-/spring-bean/.settings/
-/spring-bean/.project
-/spring-bean/.classpath
-/spring-bean/target/
+spring-bean/.settings/
+spring-bean/.project
+spring-bean/.classpath
+spring-bean/target/
 
 spring-ioc-01/.settings/
 spring-ioc-01/.project
 spring-ioc-01/.classpath
 spring-ioc-01/target/
+
+
+spring-di-01/.settings/
+spring-di-01/.project
+spring-di-01/.classpath
+spring-di-01/target/
 

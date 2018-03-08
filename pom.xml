@@ -8,6 +8,7 @@
   	<module>spring-demo-01</module>
   	<module>spring-bean</module>
 	<module>spring-ioc</module>
+	<module>spring-di-01</module>
   </modules>
   
   <dependencies>

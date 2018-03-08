@@ -1,0 +1,36 @@
+Spring  DI  依赖注入（侧重点：属性）
+
+四种方式：
+	第一种：
+		Setter注入
+		
+		第一步：
+			业务bean上提供 setter方法
+			
+		第二步： 实现spring-context 中配置(property)
+		
+		<bean id="userService" class="com.shsxt.service.UserService">
+			<property name="userDao" ref="userDao"></property>
+		</bean>
+		
+		
+		
+	第二种范式：
+		构造器注入
+		
+		第一步： 创建带参构造器
+		第二步：
+			配置spring-context.xml
+			<!-- 构造器注入 -->
+			<bean id="userService2" class="com.shsxt.service.UserService2">
+				<!-- <constructor-arg index="0" ref="userDao"></constructor-arg> -->
+				<constructor-arg name="userDao" ref="userDao"></constructor-arg>
+			</bean>
+					
+					
+					
+			
+		
+		
+			
+		
