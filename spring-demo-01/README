@@ -1,0 +1,54 @@
+第一步：
+	引入 jar
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>4.3.9.RELEASE</version>
+	</dependency>
+	
+	
+第二步： 创建一个class
+
+
+第三步：
+	添加spring框架的配置文件 (resources)
+		spring-context.xml/spring.xml/applicationContext.xml
+		
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+		<beans xmlns="http://www.springframework.org/schema/beans"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		
+			<!-- 使用 框架加载class -->
+			<bean id="helloService" class="com.shsxt.demo.HelloService"></bean>
+		
+		
+		</beans>
+		
+		
+	注意： 在beans里面 配置需要被框架加载的bean  
+			id： 遵循小驼峰名字
+			class: 完全限定名（包名+类名）
+			
+			
+第四步：启动框架（jar）
+	
+	 	1. 架加载框架的配置文件
+	 	// 加载好配置文件夹
+		ApplicationContext act = new ClassPathXmlApplicationContext("spring-context.xml");
+	
+	 	
+	 	HelloService hs =  (HelloService)act.getBean("helloService");
+		
+		hs.print();
+		
+			
+	
+		
+		
+	
+		
