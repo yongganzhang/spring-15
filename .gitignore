@@ -41,3 +41,9 @@ spring-di-05/.settings/
 spring-di-05/.project
 spring-di-05/.classpath
 spring-di-05/target/
+
+
+spring-aop-proxy/.settings/
+spring-aop-proxy/.project
+spring-aop-proxy/.classpath
+spring-aop-proxy/target/
