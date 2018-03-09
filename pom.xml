@@ -10,6 +10,7 @@
 	<module>spring-ioc</module>
 	<module>spring-di-01</module>
 	<module>spring-di-02</module>
+	<module>spring-di-03</module>
   </modules>
   
   <dependencies>
