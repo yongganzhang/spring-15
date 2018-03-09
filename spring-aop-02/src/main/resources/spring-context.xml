@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<context:component-scan base-package="com.shsxt" />
+
+	<!-- 配置切面 -->
+	<aop:config>
+		<aop:aspect ref="logCut">
+			<!-- 定义切点 -->
+			<aop:pointcut expression="execution (* com.shsxt.service..*.*(..))"
+				id="cut" />
+			<!-- 定义通知 -->
+			<aop:before method="before" pointcut-ref="cut" />
+			<aop:after-returning method="afterReturning"  pointcut-ref="cut" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
