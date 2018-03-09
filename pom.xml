@@ -14,6 +14,7 @@
 	<module>spring-di-04</module>
 	<module>spring-di-05</module>
 	<module>spring-aop-proxy</module>
+	<module>spring-aop-01</module>
   </modules>
   
   <dependencies>

@@ -1,0 +1,53 @@
+Spring AOP
+	
+	AOP: 面向切面编程 （过滤器 fiter）
+		 面向一类的类进行编程
+	
+	OOP: 面向对象编程 {class }
+		
+
+直接应用：
+	日志信息，  权限过滤（登陆拦截） 
+	
+	
+
+实现步骤：
+	
+	第一步： 
+		引用相关 aspectj 的jar
+		
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>1.8.9</version>
+			</dependency>
+						
+	
+	第二步： 
+		配置文件中引入 命名空间
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		约束规范
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		
+	
+	第三步：
+		定义aop 切面
+		定义一个类 LogCut
+			
+			1. 定义一个切点
+				定义一个空方法  在方法上添加注解 
+						@Pointcut("execution (* com.shsxt.service..*.*(..))")
+		    2. 定义通知
+		    	 前置通知 @Before
+		    	 返回通知 @AfterReturning
+		    	
+		    详细参考代码
+		    	 	
+		
+		
+		
+	
+	
+	
+	
