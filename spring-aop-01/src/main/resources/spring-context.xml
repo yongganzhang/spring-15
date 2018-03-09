@@ -14,5 +14,4 @@
 	<bean id="logCut" class="com.shsxt.aspectj.LogCut"></bean>
 
 
-
 </beans>

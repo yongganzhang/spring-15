@@ -11,7 +11,7 @@ import com.shsxt.service.UserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/spring-context.xml")
 public class SpringTest {
-	
+
 	@Autowired
 	private UserService userService;
 
