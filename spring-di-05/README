@@ -1,0 +1,56 @@
+Spring  Bean 生命周期 {第二个重点}
+
+定义： 定义   初始化  使用  销毁
+
+注意要点 ： [初始化，销毁]
+
+1. Bean定义 
+	.....
+	
+	
+2. Bean 初始化
+
+	普通的Bean
+	
+		1. 单例的Bean  scope = "singleton"
+			初始化时机： Spring启动时候，加载
+			
+		2.非单例 的Bean  scope = "prototype"
+			初始化时机： 每次使用时候，创建一个新的对象
+			
+		3. 懒加载的Bean  设置lazy-init =  true 
+			在第一次使用创建，后续放置SpringBean容器管理
+			
+	Web的Bean 
+		
+		1. request的Bean
+			每次请求时候被创建，类似 （表单数据）
+			
+		2. session的Bean 
+			每次打开会会话的创建。
+			
+
+3. Bean使用
+	。。。。。
+	
+	
+	
+4. Bean销毁	
+	
+	普通的Bean
+		
+		1、单例模式与懒加载模式的Bean 
+			容器停止的时候，被销毁
+		
+		2、非单例Bean
+			在被使用后。交于GC维护
+			
+		3、request的Bean
+			请求结束后， 销毁（GC维护）
+		
+		4、session的bean
+			会话结束后销毁
+			
+		
+
+

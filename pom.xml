@@ -12,6 +12,7 @@
 	<module>spring-di-02</module>
 	<module>spring-di-03</module>
 	<module>spring-di-04</module>
+	<module>spring-di-05</module>
   </modules>
   
   <dependencies>
