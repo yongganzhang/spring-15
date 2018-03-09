@@ -4,7 +4,7 @@ import com.shsxt.dao.UserDao;
 
 public class InstanceFactory {
 	
-	public static UserDao createUserDao () {
+	public  UserDao createUserDao () {
 		return new UserDao();
 	}
 
