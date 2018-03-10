@@ -75,3 +75,8 @@ spring-jdbc-02/.settings/
 spring-jdbc-02/.project
 spring-jdbc-02/.classpath
 spring-jdbc-02/target/
+
+spring-tx-02/.settings/
+spring-tx-02/.project
+spring-tx-02/.classpath
+spring-tx-02/target/
