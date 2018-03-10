@@ -65,3 +65,8 @@ spring-task-01/.project
 spring-task-01/.classpath
 spring-task-01/target/
 
+
+spring-jdbc-01/.settings/
+spring-jdbc-01/.project
+spring-jdbc-01/.classpath
+spring-jdbc-01/target/
