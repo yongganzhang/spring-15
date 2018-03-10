@@ -18,6 +18,7 @@
 	<module>spring-aop-02</module>
 	<module>spring-task-01</module>
 	<module>spring-jdbc-01</module>
+	<module>spring-jdbc-02</module>
   </modules>
   
   <dependencies>
