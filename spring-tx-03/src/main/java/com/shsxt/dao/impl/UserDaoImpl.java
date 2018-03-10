@@ -31,26 +31,45 @@ import com.shsxt.dao.IUserDao;
  */
 @Repository
 public class UserDaoImpl implements IUserDao {
-
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+
+
+	public User queryUserById(Integer id) {
 	
-	
-	
+		String sql = "select  id, user_name 'userName', user_balance 'userBalance' from yg_customer where id = ?";
 
-	/**
-	 * 添加用户
-	 */
-	@Transactional
-	public int addUserHasNoKey(User user) {
+		return jdbcTemplate.queryForObject(sql, new Object[] { id }, new RowMapper<User>() {
 
-		String sql = "INSERT INTO yg_customer ( user_name , user_balance) VALUES (?, ?)";
-		// 实现了 数据插入
-		int res = jdbcTemplate.update(sql, new Object[] { user.getUserName(), user.getUserBalance() });
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-		int i = 1 / 0;
+				// 解析结果集
+				User user = new User();
+				int id = rs.getInt(1);
+				user.setId(id);
 
-		return res;
+				String name = rs.getString(2);
+				user.setUserName(name);
+
+				double bal = rs.getDouble(3);
+				user.setUserBalance(bal);
+
+				return user;
+			}
+		});
 	}
 
+	/**
+	 * 修改账户余额
+	 */
+	public int updateUserInfoById(User user) {
+	
+		String sql =  "UPDATE `yg_customer` SET `user_balance`= ? WHERE  id= ? ";
+		
+		return jdbcTemplate.update(sql, new Object[] {user.getUserBalance(), user.getId()});
+	}
+
+
+	
 }
