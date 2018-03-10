@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 扫描 上下文 实现 bean管理 -->
+	<context:component-scan base-package="com.shsxt" />
+
+	<!-- 加入rmi相关配置 -->
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+		<property name="serviceName" value="hello"></property>
+		<!-- 服务实现 -->
+		<property name="service" ref="helloServiceImpl"></property>
+		<!-- 服务接口 -->
+		<property name="serviceInterface" value="com.shsxt.api.IHelloService"></property>
+		<property name="registryPort" value="1199"></property>
+	</bean>
+
+</beans>

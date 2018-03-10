@@ -90,3 +90,13 @@ spring-tx-04/.settings/
 spring-tx-04/.project
 spring-tx-04/.classpath
 spring-tx-04/target/
+
+spring-rmi-server/.settings/
+spring-rmi-server/.project
+spring-rmi-server/.classpath
+spring-rmi-server/target/
+
+spring-rmi-client/.settings/
+spring-rmi-client/.project
+spring-rmi-client/.classpath
+spring-rmi-client/target/

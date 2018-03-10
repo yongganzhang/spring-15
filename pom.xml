@@ -22,6 +22,8 @@
 	<module>spring-tx-02</module>
 	<module>spring-tx-03</module>
 	<module>spring-tx-04</module>
+	<module>spring-rmi-server</module>
+	<module>spring-rmi-client</module>
   </modules>
   
   <dependencies>
