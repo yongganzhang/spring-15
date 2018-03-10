@@ -23,5 +23,20 @@ public interface IUserDao {
 	
 	
 	public int addbatchUser (List<User> list) ;
+	
+	
+	public  User  queryUserByUid (Integer uid);
+	
+	/**
+	 * 根据姓名查询
+	 * @return
+	 */
+	public List<User> queryUserlikeByUserName (String name);
+	
+	public  int delUserByUid (int id);
+	
+	
+	public int delbatchUserByIds (Integer[] ids) ;
+	
 
 }

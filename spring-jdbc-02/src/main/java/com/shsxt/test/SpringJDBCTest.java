@@ -29,7 +29,7 @@ public class SpringJDBCTest {
 		System.out.println(r);
 
 	}
-	
+
 	@Test
 	public void test2() {
 
@@ -40,21 +40,60 @@ public class SpringJDBCTest {
 		System.out.println(r);
 
 	}
-	
+
 	@Test
 	public void test3() {
-		
+
 		List<User> list = new ArrayList<>();
-		
+
 		for (int i = 0; i < 5; i++) {
 			User user = new User();
-			user.setUserName("root"+i);
+			user.setUserName("root" + i);
 			user.setUserBalance(12.5);
 			list.add(user);
 		}
 		int r = userDao.addbatchUser(list);
 		System.out.println(r);
 
+	}
+
+	@Test
+	public void test4() {
+
+		User user = userDao.queryUserByUid(19);
+		System.out.println(user);
+
+	}
+
+	@Test
+	public void test5() {
+
+		List<User> list = userDao.queryUserlikeByUserName("root");
+
+		for (User user : list) {
+			System.out.println(user);
+		}
+	}
+	
+	@Test
+	public void test6() {
+
+		int i = userDao.delUserByUid(33);
+		System.out.println(i);
+	}
+	
+	@Test
+	public void test7() {
+		
+		Integer[] ids =	new Integer[21];
+		
+		for (int i = 0; i < 21; i++) {
+			
+			ids[i] = i+12;
+		}
+		
+		int i = userDao.delbatchUserByIds(ids);
+		System.out.println(i);
 	}
 
 }
