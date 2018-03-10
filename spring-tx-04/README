@@ -1,0 +1,50 @@
+ 实现Spring 事务管理（XML）
+ 
+ 	第一、
+ 		引入相关的 约束（AOP）
+ 			xmlns:aop="http://www.springframework.org/schema/aop" 
+ 			
+ 			http://www.springframework.org/schema/aop
+  			http://www.springframework.org/schema/aop/spring-aop.xsd
+  			
+  	第二、
+  		修改spring-context.xml
+  		
+  		开启 aop 代理
+  		   <aop:aspectj-autoproxy />
+  		   
+  		配置事务管理
+  		  <!-- 事务管理器定义 -->
+			<bean id="txManager"
+			     class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			    <property name="dataSource" ref="dataSource"></property>
+			</bean>
+			
+
+
+	第三步、配置aop切面
+	
+	<!-- aop切面 -->
+	<aop:config>
+		<aop:pointcut expression="execution( * com.shsxt.dao..*.*(..) )"
+			id="cut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="cut" />
+	</aop:config>
+	
+	
+	第四步、
+		配置 事务通知
+		
+	<!-- 配置事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<!--匹配以add开头的service方法均加入事物 -->
+			<tx:method name="add*" propagation="REQUIRED" />
+			<!-- 匹配以del开头的service方法均加入事物 -->
+			<tx:method name="del*" propagation="REQUIRED" />
+			<!-- —匹配以update开头的service方法均加入事物 -->
+			<tx:method name="update*" propagation="REQUIRED" />
+			<!-- —匹配以query开头的service方法事物为只读模式 -->
+			<tx:method name="query*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>

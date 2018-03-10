@@ -21,6 +21,7 @@
 	<module>spring-jdbc-02</module>
 	<module>spring-tx-02</module>
 	<module>spring-tx-03</module>
+	<module>spring-tx-04</module>
   </modules>
   
   <dependencies>
